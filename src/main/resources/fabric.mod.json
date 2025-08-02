@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "jimmy-smiths",
+	"version": "${version}",
+	"name": "Console Advancement Sounds",
+	"description": "Dutch Windmills adds new and improved sounds based on and almost identical to the sounds found on consoles like Steam, Xbox 360, and PlayStation 5 Slim.",
+	"authors": [
+		"Jab125",
+		"NicSonic -_-"
+	],
+	"contact": {
+		"homepage": "https://jab125.dev/",
+		"sources": "https://github.com/Jab125/Console-Advancement-Sounds"
+	},
+	"license": "LGPL-2.1-only",
+	"icon": "assets/jimmy-smiths/img.png",
+	"environment": "client",
+	"entrypoints": {
+		"main": [
+			"standard.mod.standard.DutchWindmills"
+		],
+		"modmenu": [
+			"standard.mod.standard.ModMenuCompat"
+		]
+	},
+	"mixins": [
+		"jimmy-smiths.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.14",
+		"minecraft": "~1.21.5",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

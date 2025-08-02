@@ -1,0 +1,52 @@
+{
+  "advancement-sound.xbox_360": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-x360"
+    ]
+  },
+  "advancement-sound-rare.xbox_360": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-x360"
+    ]
+  },
+  "advancement-sound.xbox_one": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-x1"
+    ]
+  },
+  "advancement-sound-rare.xbox_one": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-x1-rare"
+    ]
+  },
+  "advancement-sound.playstation_4": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-ps4"
+    ]
+  },
+  "advancement-sound-rare.playstation_4": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-ps4"
+    ]
+  },
+  "advancement-sound.playstation_5": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-ps5"
+    ]
+  },
+  "advancement-sound-rare.playstation_5": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-ps5-rare"
+    ]
+  },
+  "advancement-sound.steam": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-steam"
+    ]
+  },
+  "advancement-sound-rare.steam": {
+    "sounds": [
+      "jimmy-smiths:advancement-sound-steam"
+    ]
+  }
+}
