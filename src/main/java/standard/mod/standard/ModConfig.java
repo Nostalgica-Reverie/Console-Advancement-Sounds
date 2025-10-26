@@ -14,7 +14,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class ModConfig {
-	public Type type = Type.PLAYSTATION_4;
+	public Type type = Type.JAVA;
 	public static final Codec<ModConfig> CODEC = RecordCodecBuilder.create(instance -> instance.group(
 			Type.CODEC.fieldOf("sound_platform").forGetter(a -> a.type)
 	).apply(instance, f -> {

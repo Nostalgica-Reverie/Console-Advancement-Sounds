@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class DutchWindmills implements ModInitializer {
-	public static final String MOD_ID = "jimmy-smiths";
+	public static final String MOD_ID = "console_advancement_sounds";
 
 	// This logger is used to write text to the console and the log file.
 	// It is considered best practice to use your mod id as the logger's name.
@@ -31,9 +31,9 @@ public class DutchWindmills implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		for (Type value : Type.values()) {
-			T.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("jimmy-smiths:advancement-sound." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("jimmy-smiths:advancement-sound." + value.getSerializedName()))));
+			T.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName()))));
 
-			T2.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("jimmy-smiths:advancement-sound-rare." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("jimmy-smiths:advancement-sound-rare." + value.getSerializedName()))));
+			T2.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName()))));
 		}
 		LOGGER.info("Hello NeoForge world!");
 		try {

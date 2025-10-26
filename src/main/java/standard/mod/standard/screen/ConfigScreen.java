@@ -26,13 +26,7 @@ public class ConfigScreen extends Screen {
 	protected void init() {
 		super.init();
 		boolean s;
-		if ( Minecraft.getInstance().getGameProfile() != null) {
-			String name1 = Minecraft.getInstance().getGameProfile().getName();
-			s = name1 != null && (name1.toLowerCase(Locale.ROOT).equals("nicgamertv") || name1.toLowerCase(Locale.ROOT).equals("jab125"));
-		} else {
-			s = false;
-		}
-		s = s? Math.random() < 0.003 : Math.random() < 0.08;
+		s = Math.random() < 0.01;
 		boolean finalS = s;
 		CycleButton.Builder<Type> type = new CycleButton.Builder<>(a -> Component.literal(finalS ? a.d2 : a.d));
 		type.withValues(Type.values());

@@ -1,6 +1,6 @@
 {
 	"schemaVersion": 1,
-	"id": "jimmy-smiths",
+	"id": "console_advancement_sounds",
 	"version": "${version}",
 	"name": "Console Advancement Sounds",
 	"description": "Dutch Windmills adds new and improved sounds based on and almost identical to the sounds found on consoles like Steam, Xbox 360, and PlayStation 5 Slim.",
@@ -10,10 +10,10 @@
 	],
 	"contact": {
 		"homepage": "https://jab125.dev/",
-		"sources": "https://github.com/Jab125/Console-Advancement-Sounds"
+		"sources": "https://github.com/Nostalgica-Reverie/Console-Advancement-Sounds"
 	},
 	"license": "LGPL-2.1-only",
-	"icon": "assets/jimmy-smiths/img.png",
+	"icon": "assets/console_advancement_sounds/img.png",
 	"environment": "client",
 	"entrypoints": {
 		"main": [
