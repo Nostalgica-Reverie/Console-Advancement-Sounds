@@ -31,9 +31,9 @@ public class DutchWindmills implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		for (Type value : Type.values()) {
-			T.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName()))));
+			T.put(value, SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName())));
 
-			T2.put(value, Registry.register(BuiltInRegistries.SOUND_EVENT, ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName()), SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName()))));
+			T2.put(value, SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName())));
 		}
 		LOGGER.info("Hello NeoForge world!");
 		try {
