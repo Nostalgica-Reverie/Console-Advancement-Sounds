@@ -3,6 +3,7 @@ package standard.mod.standard;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
+import com.google.gson.JsonSyntaxException;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
@@ -32,9 +33,42 @@ public class ModConfig {
 			return modConfig;
 		} else {
 			String s = Files.readString(resolve, StandardCharsets.UTF_8);
-			JsonElement json = new Gson().fromJson(s, JsonElement.class);
-			return CODEC.parse(JsonOps.INSTANCE, json).resultOrPartial().orElseThrow();
+			JsonElement json;
+			try {
+				json = new Gson().fromJson(s, JsonElement.class);
+			} catch (JsonSyntaxException e) {
+				DutchWindmills.LOGGER.warn("Failed to parse config; resetting to defaults", e);
+				ModConfig modConfig = new ModConfig();
+				modConfig.save();
+				return modConfig;
+			}
+
+			return CODEC.parse(JsonOps.INSTANCE, json).resultOrPartial().orElseGet(() -> migrateOrReset(json));
 		}
+	}
+
+	private static ModConfig migrateOrReset(JsonElement json) {
+		ModConfig modConfig = new ModConfig();
+
+		if (json != null && json.isJsonObject()) {
+			JsonElement soundPlatform = json.getAsJsonObject().get("sound_platform");
+			if (soundPlatform != null && soundPlatform.isJsonPrimitive()) {
+				String platform = soundPlatform.getAsString();
+				if ("playstation_3".equalsIgnoreCase(platform) || "ps3".equalsIgnoreCase(platform)) {
+					modConfig.type = Type.LEGACY;
+				} else {
+					DutchWindmills.LOGGER.warn("Unknown sound platform '{}' in config; resetting to defaults", platform);
+				}
+			}
+		}
+
+		try {
+			modConfig.save();
+		} catch (IOException e) {
+			DutchWindmills.LOGGER.warn("Failed to save migrated config", e);
+		}
+
+		return modConfig;
 	}
 
 	public void save() throws IOException {
