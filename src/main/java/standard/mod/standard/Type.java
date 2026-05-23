@@ -8,6 +8,7 @@ import java.util.Locale;
 public enum Type implements StringRepresentable {
 	JAVA("Java Edition", "Java Edition"),
 	XBOX_360("Xbox 360", "X-box 360"),
+	LEGACY("Legacy", "Legashy"),
 	PLAYSTATION_5("Playstation 5", "Paystation 5"),
 	XBOX_ONE("Xbox One", "Xbox 1"),
 	PLAYSTATION_4("Playstation 4", "Paystation 4"),

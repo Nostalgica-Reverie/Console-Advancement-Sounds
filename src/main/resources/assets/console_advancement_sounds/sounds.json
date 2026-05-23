@@ -9,6 +9,16 @@
       "console_advancement_sounds:advancement-sound-x360"
     ]
   },
+  "advancement-sound.legacy": {
+    "sounds": [
+      "console_advancement_sounds:advancement-sound-legacy"
+    ]
+  },
+  "advancement-sound-rare.legacy": {
+    "sounds": [
+      "console_advancement_sounds:advancement-sound-legacy"
+    ]
+  },
   "advancement-sound.xbox_one": {
     "sounds": [
       "console_advancement_sounds:advancement-sound-x1"

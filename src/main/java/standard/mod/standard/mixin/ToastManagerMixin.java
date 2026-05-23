@@ -15,7 +15,7 @@ import standard.mod.standard.Type;
 @Mixin(ToastManager.class)
 public class ToastManagerMixin {
 	@WrapOperation(method =
-			"method_61992(Lnet/minecraft/client/gui/components/toasts/Toast;)Z"
+			"lambda$update$1(Lnet/minecraft/client/gui/components/toasts/Toast;)Z"
 			,at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/components/toasts/Toast;getSoundEvent()Lnet/minecraft/sounds/SoundEvent;"))
 	SoundEvent update(Toast instance, Operation<SoundEvent> original) {
 		theIfStatement:

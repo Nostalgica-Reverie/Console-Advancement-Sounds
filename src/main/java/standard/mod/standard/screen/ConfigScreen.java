@@ -1,7 +1,7 @@
 package standard.mod.standard.screen;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.GuiGraphicsExtractor;
 import net.minecraft.client.gui.components.CycleButton;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
@@ -28,9 +28,8 @@ public class ConfigScreen extends Screen {
 		boolean s;
 		s = Math.random() < 0.01;
 		boolean finalS = s;
-		CycleButton.Builder<Type> type = new CycleButton.Builder<>(a -> Component.literal(finalS ? a.d2 : a.d));
+		CycleButton.Builder<Type> type = CycleButton.builder(a -> Component.literal(finalS ? a.d2 : a.d), DutchWindmills.config.type);
 		type.withValues(Type.values());
-		type.withInitialValue(DutchWindmills.config.type);
 		CycleButton<Type> jeff = type.create(this.width / 2 - 100, 20, 200, 20, Component.literal(s ? "taip (ing)" : "TYPE"), (a, b) -> {
 			DutchWindmills.config.type = b;
 		});
@@ -40,9 +39,9 @@ public class ConfigScreen extends Screen {
 	}
 
 	@Override
-	public void render(GuiGraphics guiGraphics, int i, int j, float f) {
-		super.render(guiGraphics, i, j, f);
-		guiGraphics.drawCenteredString(font, "The config screen", (int) (this.width / 2), (int) (5), 0xffffffff);
+	public void extractRenderState(GuiGraphicsExtractor guiGraphics, int i, int j, float f) {
+		super.extractRenderState(guiGraphics, i, j, f);
+		guiGraphics.centeredText(font, "The config screen", (int) (this.width / 2), (int) (5), 0xffffffff);
 	}
 
 	@Override
