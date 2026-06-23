@@ -5,7 +5,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.client.gui.components.toasts.ToastManager;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,9 +31,9 @@ public class DutchWindmills implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		for (Type value : Type.values()) {
-			T.put(value, SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName())));
+			T.put(value, SoundEvent.createVariableRangeEvent(Identifier.parse("console_advancement_sounds:advancement-sound." + value.getSerializedName())));
 
-			T2.put(value, SoundEvent.createVariableRangeEvent(ResourceLocation.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName())));
+			T2.put(value, SoundEvent.createVariableRangeEvent(Identifier.parse("console_advancement_sounds:advancement-sound-rare." + value.getSerializedName())));
 		}
 		LOGGER.info("Hello NeoForge world!");
 		try {
